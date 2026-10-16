@@ -1,0 +1,6 @@
+{
+  "name": "BridgeAI",
+  "description": "Accessible AI Learning & Workplace Automation Platform designed for beginners, neurodivergent learners, and career changers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: #f8fafc;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    color: #090d16;
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Accessibility: Text Scaling */
+html[data-text-size="large"] {
+  font-size: 112%;
+}
+
+html[data-text-size="xl"] {
+  font-size: 125%;
+}
+
+/* Accessibility: Dyslexia-friendly spacing */
+html[data-dyslexia="true"] body {
+  letter-spacing: 0.06em;
+  word-spacing: 0.16em;
+  line-height: 1.9;
+}
+
+/* High Contrast Mode (Deep black and white with high-visibility borders) */
+html[data-contrast="high"] body {
+  background-color: #020617;
+  color: #ffffff;
+}
+
+html[data-contrast="high"] .bg-white {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #475569 !important;
+}
+
+html[data-contrast="high"] .text-slate-600,
+html[data-contrast="high"] .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+html[data-contrast="high"] .text-slate-900 {
+  color: #ffffff !important;
+}
+
+/* Accessible visible focus states */
+*:focus-visible {
+  outline: 3px solid #0f766e !important;
+  outline-offset: 2px !important;
+}
+
+/* Smooth reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
